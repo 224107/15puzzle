@@ -4,6 +4,7 @@ class DFS {
     this.open = [puzzleToSolve];
     this.solved = false;
     this.pathToSolution = [];
+    this.pathString = "";
   }
 
   search() {
@@ -23,7 +24,8 @@ class DFS {
           console.log("goal found");
           this.solved = true;
           this.PathTrace(currentChild);
-          console.log(currentChild.path, ` ${currentChild.path.length} moves`);
+          this.pathString = currentChild.path;
+          console.log(this.pathString, ` ${currentChild.path.length} moves`);
         }
         if (
           !this.listContains(this.open, currentChild) &&

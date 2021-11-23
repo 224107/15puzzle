@@ -4,6 +4,7 @@ class BFS {
     this.open = [puzzleToSolve];
     this.solved = false;
     this.pathToSolution = [];
+    this.pathString = "";
   }
 
   search() {
@@ -26,7 +27,8 @@ class BFS {
           console.log("goal found");
           this.solved = true;
           this.PathTrace(currentChild);
-          console.log(currentChild.path, ` ${currentChild.path.length} moves`);
+          this.pathString = currentChild.path;
+          console.log(this.pathString, ` ${currentChild.path.length} moves`);
         }
         //jesli nie badalismy takiego noda wczesniej(seen[]) i nie ma go na open[] to wrzucamy go do open
         if (
