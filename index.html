@@ -9,14 +9,33 @@
   </head>
 
   <body>
-    <header>
-      <h1>Puzzle solver</h1>
-    </header>
+    <div class="form">
+      <label for="size">SIZE</label>
+      <select id="size" name="size">
+        <option value="3">3 x 3</option>
+        <option value="4">4 x 4</option>
+      </select>
+      <label for="puzzle">PUZZLE</label>
+      <input type="text" id="puzzle" placeholder="PUZZLE..." />
 
-    <div class="grid-container" id="board"></div>
-    <button class="btn" id="next">next move</button>
+      <label for="order">ORDER</label>
+      <input type="text" id="order" placeholder="ORDER..." />
 
-    <h1 class="label" id="solutionLabel">Solution:</h1>
+      <label for="algorithm">ALGORITHM</label>
+      <select id="algorithm">
+        <option value="BFS">BFS</option>
+        <option value="DFS">DFS</option>
+        <option value="IDFS">IDFS</option>
+      </select>
+      <button id="submitBtn">Submit</button>
+    </div>
+    <div class="solver hidden">
+      <div class="grid-container" id="board"></div>
+      <button class="btn" id="next">next move</button>
+
+      <h1 class="label" id="solutionLabel">Solution:</h1>
+    </div>
+
     <script src="state.js"></script>
     <script src="BFS.js"></script>
     <script src="DFS.js"></script>
